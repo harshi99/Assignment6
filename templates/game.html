@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pile of Stones - Game Setup</title>
+</head>
+<body>
+    <p>Harshitha gokanakonda</p>
+    <p>ID:1001949798</p>
+    <h1>Pile of Stones - Game Setup</h1>
+    <form method="POST" action="{{ url_for('play_game') }}">
+        <label for="player1_name">Player 1 Name:</label>
+        <input type="text" name="player1_name" id="player1_name" required><br>
+
+        <label for="player2_name">Player 2 Name:</label>
+        <input type="text" name="player2_name" id="player2_name" required><br>
+
+        
+        <button type="submit">Start Game</button>
+    </form>
+</body>
+</html>

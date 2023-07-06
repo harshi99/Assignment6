@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pile of Stones - Game Window</title>
+</head>
+<body>
+    <p>Harshitha gokanakonda</p>
+    <p>ID:1001949798</p>
+    <h1>Pile of Stones - Game Window</h1>
+    
+    <h3>Player 1: {{ player1_name }}</h3>
+    <h3>Player 2: {{ player2_name }}</h3>
+
+    <h3>Stones in each pile:</h3>
+    <ul>
+        <li>Pile 1: {{ piles[0] }}</li>
+        <li>Pile 2: {{ piles[1] }}</li>
+        <li>Pile 3: {{ piles[2] }}</li>
+    </ul>
+
+    <h3>Current Turn: Player {{ 1 if player1_turn else 2 }}</h3>
+
+    <h3>Player 1 Score: {{ player1_score }}</h3>
+    <h3>Player 2 Score: {{ player2_score }}</h3>
+
+    <form method="POST" action="{{ url_for('game_window') }}">
+        <label for="pile_index">Select pile:</label>
+        <select name="pile_index" id="pile_index">
+            <option value="0">Pile 1</option>
+            <option value="1">Pile 2</option>
+            <option value="2">Pile 3</option>
+        </select>
+
+        <label for="stones_picked">Number of stones to pick:</label>
+        <input type="number" name="stones_picked" id="stones_picked" min="{{ min_stones }}" max="{{ max_stones }}" required>
+
+        <button type="submit">Pick Stones</button>
+    </form>
+</body>
+</html>
